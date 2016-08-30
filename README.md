@@ -1,9 +1,7 @@
 # Mobile Sensing and Learning Assignment One
 
 ##### Jacob Adkins
-
 ##### Omar Roa
-
 ##### David Kim
 
 ## 'For Thought' answers
