@@ -1,8 +1,8 @@
 # Mobile Sensing and Learning Assignment One
 
-##### Jacob Adkins
-##### Omar Roa
-##### David Kim
+- Jacob Adkins 
+- Omar Roa 
+- David Kim
 
 ## 'For Thought' answers
 
@@ -16,4 +16,4 @@
 
 ### Question 3
 
-##### If there were 1000 images in the assets file, the previous implementation of the model (on demand initialization) would be a better option. It would be slower, but you would remove the overhead of having 10000 images in memory
+##### If there were 1000 images in the assets file, the previous implementation of the model (on demand initialization) would be a better option. It would be slower, but you would remove the overhead of having 1000 images in memory
