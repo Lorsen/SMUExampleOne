@@ -19,20 +19,18 @@
 @implementation TableViewController
 
 -(ImageModel*)myImageModel{
-    
     if(!_myImageModel)
         _myImageModel =[ImageModel sharedInstance];
-    
     return _myImageModel;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -48,45 +46,35 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     if(section==0)
-        return self.myImageModel.imageNames.count;
+      return [self.myImageModel getImageCount];
     else
         return 1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
     UITableViewCell *cell = nil;
-    
     if(indexPath.section==0){
         cell = [tableView dequeueReusableCellWithIdentifier:@"ImageNameCell" forIndexPath:indexPath];
-        
         // Configure the cell...
-        cell.textLabel.text = self.myImageModel.imageNames[indexPath.row];
+        cell.textLabel.text = [self.myImageModel getImageNameFromIndex:indexPath.row];
         cell.detailTextLabel.text = @"More";
     }
     else{
         cell = [tableView dequeueReusableCellWithIdentifier:@"CollectionCell" forIndexPath:indexPath];
-        
         // Configure the cell...
         cell.textLabel.text = @"Collection";
     }
-    
     return cell;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
     BOOL isVC = [[segue destinationViewController] isKindOfClass:[ViewController class]];
-    
     if(isVC){
         UITableViewCell* cell = (UITableViewCell*)sender;
         ViewController *vc = [segue destinationViewController];
-        
         vc.imageName = cell.textLabel.text;
     }
-    
 }
 
 

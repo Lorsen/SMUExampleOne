@@ -11,7 +11,9 @@
 
 @interface ImageModel : NSObject
 
-@property (strong,nonatomic) NSArray* imageNames;
+-(NSString*)getImageNameFromIndex:(NSInteger)index;
+-(UIImage*)getImageDataFromIndex:(NSInteger)index;
+-(NSInteger)getImageCount;
 
 +(ImageModel*) sharedInstance;
 
